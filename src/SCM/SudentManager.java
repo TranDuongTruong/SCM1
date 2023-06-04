@@ -1,7 +1,9 @@
 package SCM;
+import java.util.*;
 
-public class SudentManager {
-	public  ArrayList<Student> studentList;
+
+public class StudentManager {
+	public  ArrayList<Student> studentList=new ArrayList<>();
 		static Scanner nhap=new Scanner(System.in);
 		//tìm học sinh với số điểm trung bình cao nhất
 		Student highestScore()
@@ -38,6 +40,43 @@ public class SudentManager {
 		return studentList.get(vitri);
 	}
 	
+	 void Enter() {
+		  Scanner kb=new Scanner(System.in);
+		  int n;
+		  System.out.println(" Number of students you want to add to the list: ");n=kb.nextInt();
+		  for (int i=0;i<n;i++) {
+					String name;
+				    int age;
+				    String studentId;
+				    String major;
+				    double gpa;
+				  float mathGrade;
+				  float literatureGrade;
+				  float englishGrade;
+				  float physicsGrade;
+				  
+			  System.out.println(" The information of Student "+i);
+			  System.out.println(" Name is: ");name=kb.next();	
+			  System.out.println(" Age is: ");age=kb.nextInt();
+			  System.out.println(" StudentId is: ");studentId=kb.next();
+			  System.out.println(" Major is: ");major=kb.next();
+			  System.out.println(" GPA is: ");gpa=kb.nextDouble();	
+			  Student s=new Student(name,age,studentId,major,gpa);
+			  System.out.println(" Math Grade is: ");mathGrade=kb.nextFloat();s.setMathGrade(mathGrade);
+			  System.out.println(" Literature Grade is: ");literatureGrade=kb.nextFloat();s.setLiteratureGrade(literatureGrade);
+			  System.out.println(" English Grade is: ");englishGrade=kb.nextFloat();s.setEnglishGrade(englishGrade);
+			  System.out.println(" Physics Grade is: ");physicsGrade=kb.nextFloat();s.setPhysicsGrade(physicsGrade);
+			  studentList.add(s);
+			  }
+			  
+		  }
+	void Print() {
+		for(int i=0;i<studentList.size();i++) {
+			
+			this.studentList.get(i).output();;
+		}
+	
+	}
 	//Thêm 1 học sinh
 	void add()
 	{
@@ -58,61 +97,7 @@ public class SudentManager {
 				studentList.remove(i);
 		}
 	}
-	public  ArrayList<Student> studentList;
-	  public StudentManager()
-	    {
-	        studentList = new ArrayList<>();
-	    }
-	  void Enter() {
-		  Scanner kb=new Scanner(System.in);
-		  int n;
-		  System.out.println(" Number of students you want to add to the list: ");n=kb.nextInt();
-		  for (int i=0;i<n;i++) {
-					String name;
-				    int age;
-				    String studentId;
-				    String major;
-				    double gpa;
-				  int mathGrade;
-				  int literatureGrade;
-				  int englishGrade;
-				  int physicsGrade;
-				  
-			  System.out.println(" The information of Student "+i);
-			  System.out.println(" Name is: ");name=kb.next();	
-			  System.out.println(" Age is: ");age=kb.nextInt();
-			  System.out.println(" StudentId is: ");studentId=kb.next();
-			  System.out.println(" Major is: ");major=kb.next();
-			  System.out.println(" GPA is: ");gpa=kb.nextDouble();	
-			  Student s=new Student(name,age,studentId,major,gpa);
-			  System.out.println(" Math Grade is: ");mathGrade=kb.nextFloat();s.setMathGrade(mathGrade);
-			  System.out.println(" Literature Grade is: ");literatureGrade=kb.nextFloat();s.setLiteratureGrade(literatureGrade);
-			  System.out.println(" English Grade is: ");englishGrade=kb.nextFloat();s.setEnglishGrade(englishGrade);
-			  System.out.println(" Physics Grade is: ");physicsGrade=kb.nextFloat();s.setPhysicsGrade(physicsGrade);
-			  studentList.add(s);
-			  }
-			  
-		  }
-	void Print() {
-		for(int i=0;i<studentList.size();i++) {
-			
-			studentList.get(i).output();;
-		}
-	
-	}
-	void Sort() {
-		for (int i=0;i<studentList.size();i++) {
-			for (int j=i+1;j<studentList.size()-1;j++) {
-				if (studentList.get(j).AverageScore()>studentList.get(j+1).AverageScore()) {
-					Student temp=new Student();
-					temp=studentList.get(j);
-					studentList.set(j,studentList.get(j+1));
-					studentList.set(j+1,temp);
-				}
-			}
-		}
-	}
-	
+
 
 	public static void main(String[] args) {
 		StudentManager a=new StudentManager();
