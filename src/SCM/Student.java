@@ -2,7 +2,7 @@ package scm;
 //Hoang Nghia Quyen
 import java.util.Scanner;
 //this class contains information of a student including student ID, name, age, m, gpa
-public class Student extends StudentGrade {
+public class Student extends  StudentGrade {
 
     private String name;
     private int age;
