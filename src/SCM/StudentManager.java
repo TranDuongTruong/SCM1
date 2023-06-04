@@ -1,4 +1,4 @@
-package scm;
+package ;
 //Author: Huynh Huu Tuong, Nguyen Hoang Viet
 import java.util.*;
 // This class demonstrate how we manage information about the students of a university using functions: 
@@ -6,7 +6,7 @@ import java.util.*;
 public class StudentManager {
 	public  ArrayList<Student> student_list=new ArrayList<>();
 		static Scanner nhap=new Scanner(System.in);
-		//To do: find out the student with highest score
+		//To do: find out the student with the highest score
 		Student highestScore()
 		{
 		int vitri=0;
@@ -23,7 +23,7 @@ public class StudentManager {
 		return student_list.get(vitri);
 	}
 	
-	//To do: find out student with lowest score
+	//To do: find othethe student with the lowest score
 	Student lowestScore()
 	{
 		int vitri=0;
@@ -88,14 +88,14 @@ public class StudentManager {
 		
 	}
 	
-	//To do: remove one student from the list by Their ID
+	//To do: remove one student from the list by their ID
 	void delete()
 	{
-		String ID;
-		System.out.println("Nhap ID hoc sinh can xoa: ");ID=nhap.nextLine();
+		String id;
+		System.out.println("Nhap ID hoc sinh can xoa: ");id=nhap.nextLine();
 		for(int i=0;i<student_list.size();i++)
 		{
-			if(student_list.get(i).getStudentId()==ID)
+			if(student_list.get(i).getStudentId()==id)
 				student_list.remove(i);
 		}
 	}
