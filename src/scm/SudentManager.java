@@ -1,4 +1,4 @@
-package SCM;
+package scm;
 
 public class SudentManager {
 	public  ArrayList<Student> studentList;

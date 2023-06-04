@@ -1,4 +1,4 @@
-package System;
+package scm;
 //this class manage students' scores 
 //with specific subjects such as math, Literature, English, Physics.
 public class StudentGrade {
