@@ -1,46 +1,47 @@
-package SCM;
+package scm;
+//Author: Huynh Huu Tuong, Nguyen Hoang Viet
 import java.util.*;
-
-
+// This class demonstrate how we manage information about the students of a university using functions: 
+//highestScore,lowestScore,Enter,printStudent,add,delete
 public class StudentManager {
-	public  ArrayList<Student> studentList=new ArrayList<>();
+	public  ArrayList<Student> student_list=new ArrayList<>();
 		static Scanner nhap=new Scanner(System.in);
-		//tìm học sinh với số điểm trung bình cao nhất
+		//To do: find out the student with highest score
 		Student highestScore()
-	{
-		int vitri=0;
-		float highestScore=studentList.get(0).getMediumGrade();
-		for(int i=0;i<studentList.size();i++)
 		{
-			if(studentList.get(i).getMediumGrade()>highestScore)
+		int vitri=0;
+		float highestScore=student_list.get(0).getMediumGrade();
+		for(int i=0;i<student_list.size();i++)
+		{
+			if(student_list.get(i).getMediumGrade()>highestScore)
 			{
 				vitri=i;
-				highestScore=studentList.get(i).getMediumGrade();
+				highestScore=student_list.get(i).getMediumGrade();
 			}
 		}
 		
-		return studentList.get(vitri);
+		return student_list.get(vitri);
 	}
 	
-	//tìm học sinh với số điểm trung bình thấp nhất
+	//To do: find out student with lowest score
 	Student lowestScore()
 	{
 		int vitri=0;
-		float lowestScore=studentList.get(0).getMediumGrade();
-		for(int i=0;i<studentList.size();i++)
+		float lowestScore=student_list.get(0).getMediumGrade();
+		for(int i=0;i<student_list.size();i++)
 		{
-			if(studentList.get(i).getMediumGrade()<lowestScore)
+			if(student_list.get(i).getMediumGrade()<lowestScore)
 			{
 				vitri=i;
-				lowestScore=studentList.get(i).getMediumGrade();
+				lowestScore=student_list.get(i).getMediumGrade();
 			}
 		}
 		
 		
-		return studentList.get(vitri);
+		return student_list.get(vitri);
 	}
-	
-	 void Enter() {
+	// To do: fill in Information of student 
+	 void enter() {
 		  Scanner kb=new Scanner(System.in);
 		  int n;
 		  System.out.println(" Number of students you want to add to the list: ");n=kb.nextInt();
@@ -66,39 +67,41 @@ public class StudentManager {
 			  System.out.println(" Literature Grade is: ");literatureGrade=kb.nextFloat();s.setLiteratureGrade(literatureGrade);
 			  System.out.println(" English Grade is: ");englishGrade=kb.nextFloat();s.setEnglishGrade(englishGrade);
 			  System.out.println(" Physics Grade is: ");physicsGrade=kb.nextFloat();s.setPhysicsGrade(physicsGrade);
-			  studentList.add(s);
+			  student_list.add(s);
 			  }
 			  
 		  }
-	void Print() {
-		for(int i=0;i<studentList.size();i++) {
+	// To do: Print the information of All student
+	void print() {
+		for(int i=0;i<student_list.size();i++) {
 			
-			this.studentList.get(i).output();;
+			this.student_list.get(i).output();;
 		}
 	
 	}
-	//Thêm 1 học sinh
+	//To do: Add one student to the list
 	void add()
 	{
 		Student m=new Student();
 		m.input();
-		studentList.add(m);
+		student_list.add(m);
 		
 	}
 	
-	//Xóa 1 học sinh
+	//To do: remove one student from the list by Their ID
 	void delete()
 	{
 		String ID;
 		System.out.println("Nhap ID hoc sinh can xoa: ");ID=nhap.nextLine();
-		for(int i=0;i<studentList.size();i++)
+		for(int i=0;i<student_list.size();i++)
 		{
-			if(studentList.get(i).getStudentId()==ID)
-				studentList.remove(i);
+			if(student_list.get(i).getStudentId()==ID)
+				student_list.remove(i);
 		}
 	}
+	
 
-
+	// To do: Demonstrate this program
 	public static void main(String[] args) {
 		StudentManager a=new StudentManager();
 		a.Enter();
@@ -115,3 +118,4 @@ public class StudentManager {
 	}
 	
 }
+
