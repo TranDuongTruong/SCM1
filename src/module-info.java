@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * 
  */
@@ -6,4 +7,14 @@
  *
  */
 module QuanLySinhVien {
+=======
+/**
+ * 
+ */
+/**
+ * @author ADmin
+ *
+ */
+module QuanLySinhVien {
+>>>>>>> NguyenHoangViet-Refactor
 }
